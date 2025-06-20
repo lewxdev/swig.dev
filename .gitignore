@@ -1,0 +1,32 @@
+# based on: https://www.toptal.com/developers/gitignore/api/nextjs
+
+# dependencies
+node_modules/
+
+# environment
+.env*.local
+
+# logs
+*.log
+npm-debug.log*
+
+# miscellaneous
+.DS_Store
+*.pem
+
+# production
+build/
+
+# testing
+coverage/
+
+# next.js
+.next/
+out/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# vercel
+.vercel/

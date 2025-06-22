@@ -11,14 +11,20 @@ const comments = [
   },
 ];
 
-export default function EventPage({ params }: { params: { id: string } }) {
+export default async function EventPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+
   return (
     <div className="space-y-8">
       <div>
         <div className="flex items-start justify-between pb-2">
           <h1 className="text-xl">code & coffee #42</h1>
           <a
-            href={`/event/${params.id}/edit`}
+            href={`/event/${id}/edit`}
             className="text-sm text-orange-600 hover:underline"
           >
             edit

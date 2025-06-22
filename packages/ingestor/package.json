@@ -1,0 +1,12 @@
+{
+  "name": "ingestor",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "node --watch index.ts"
+  },
+  "dependencies": {
+    "@skyware/jetstream": "^0.2.2"
+  }
+}

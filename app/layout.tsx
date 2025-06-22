@@ -5,7 +5,6 @@ import { Geist_Mono } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "swig.dev",
-  description: "minimal event platform for tech and beverage meetups",
 };
 
 const geistMono = Geist_Mono({
@@ -15,15 +14,15 @@ const geistMono = Geist_Mono({
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang="en" className={geistMono.className}>
-      <body className="min-h-screen bg-white text-black">
+      <body className="min-h-screen">
         <nav className="border-b border-gray-200">
           <div className="mx-auto flex max-w-4xl items-center justify-between p-4">
             <Link href="/" className="text-orange-600">
               swig.dev
             </Link>
             <div className="space-x-4">
-              <Link href="/events" className="hover:text-orange-600">
-                events
+              <Link href="/create" className="hover:text-orange-600">
+                create
               </Link>
               <Link href="/login" className="hover:text-orange-600">
                 login

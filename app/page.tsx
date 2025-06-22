@@ -11,11 +11,11 @@ export default function HomePage() {
         />
       </div>
       <div>
-        <h2 className="mb-4">nearby events</h2>
+        <h2 className="pb-4">nearby events</h2>
         <div className="space-y-4">
           <div>
             <Link href="/event/1" className="block hover:text-orange-600">
-              <div className="mb-1">code & coffee #42</div>
+              <div className="pb-1">code & coffee #42</div>
               <div className="text-sm text-gray-600">
                 tomorrow 9:00am • local cafe
               </div>
@@ -24,7 +24,7 @@ export default function HomePage() {
           <div className="border-b border-gray-100"></div>
           <div>
             <Link href="/event/2" className="block hover:text-orange-600">
-              <div className="mb-1">react meetup</div>
+              <div className="pb-1">react meetup</div>
               <div className="text-sm text-gray-600">
                 friday 6:00pm • tech hub
               </div>
@@ -33,7 +33,7 @@ export default function HomePage() {
           <div className="border-b border-gray-100"></div>
           <div>
             <Link href="/event/3" className="block hover:text-orange-600">
-              <div className="mb-1">beer.js</div>
+              <div className="pb-1">beer.js</div>
               <div className="text-sm text-gray-600">
                 saturday 7:00pm • brewery
               </div>

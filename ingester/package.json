@@ -1,0 +1,12 @@
+{
+  "name": "ingester",
+  "type": "module",
+  "main": "index.ts",
+  "devDependencies": {
+    "@tsconfig/node-ts": "^23.6.1",
+    "@tsconfig/node24": "^24.0.1"
+  },
+  "dependencies": {
+    "@skyware/jetstream": "^0.2.2"
+  }
+}

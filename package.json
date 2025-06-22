@@ -12,7 +12,7 @@
     "build:web": "npm run build --workspace=web",
     "start": "npm run start --workspace=web",
     "start:web": "npm run start --workspace=web",
-    "lint": "npm run lint --workspaces",
+    "lint": "npm run lint --if-present --workspaces",
     "lint:web": "npm run lint --workspace=web",
     "format": "prettier --cache --write ."
   },

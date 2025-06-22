@@ -4,6 +4,7 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
+    "start": "node index.ts",
     "dev": "node --watch index.ts"
   },
   "dependencies": {

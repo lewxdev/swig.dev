@@ -5,12 +5,10 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=web",
     "dev:web": "npm run dev --workspace=web",
     "dev:ingestor": "npm run dev --workspace=ingestor",
     "build": "npm run build --if-present --workspaces",
     "build:web": "npm run build --workspace=web",
-    "start": "npm run start --workspace=web",
     "start:web": "npm run start --workspace=web",
     "lint": "npm run lint --if-present --workspaces",
     "lint:web": "npm run lint --workspace=web",

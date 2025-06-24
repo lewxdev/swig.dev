@@ -24,7 +24,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
               <Link href="/create" className="hover:text-orange-600">
                 create
               </Link>
-              <Link href="/login" className="hover:text-orange-600">
+              <Link href="/oauth" className="hover:text-orange-600">
                 login
               </Link>
             </div>

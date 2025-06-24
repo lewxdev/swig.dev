@@ -33,7 +33,7 @@ export const client = new NodeOAuthClient({
   clientMetadata: {
     client_name: "swig.dev",
     client_uri: url(),
-    client_id: url("/client-metadata.json"),
+    client_id: url("/oauth/client-metadata.json"),
     grant_types: ["authorization_code", "refresh_token"],
     scope: "atproto transition:generic",
     response_types: ["code"],

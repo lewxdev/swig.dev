@@ -9,12 +9,13 @@ export async function login(_message: string, payload: FormData) {
     return "invalid handle";
   }
 
+  let url: URL;
   try {
-    const url = await client.authorize(handle);
-    redirect(url.href);
+    url = await client.authorize(handle);
   } catch (error) {
     const message =
       error instanceof Error ? error.message : error?.toString() || "";
     return message?.trim().toLowerCase();
   }
+  redirect(url.href);
 }

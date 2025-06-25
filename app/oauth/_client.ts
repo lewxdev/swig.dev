@@ -3,7 +3,7 @@ import type { SimpleStore, Key, Value } from "@atproto-labs/simple-store";
 import { eq } from "drizzle-orm";
 import type { AnyPgTable, AnyPgColumn } from "drizzle-orm/pg-core";
 import { db, authState, authSession } from "@/db";
-import { url } from "@/lib/util";
+import { config } from "@/lib/config";
 
 function makeStore<K extends Key, V extends Value>(
   table: AnyPgTable & {
@@ -37,12 +37,16 @@ export const client = new NodeOAuthClient({
   // see: https://docs.bsky.app/docs/advanced-guides/oauth-client#client-and-server-metadata
   clientMetadata: {
     client_name: "swig.dev",
-    client_uri: url("/"),
-    client_id: url("/oauth/client-metadata.json"),
+    client_uri: config.url,
+    get client_id() {
+      return config.vercelUrl
+        ? `${config.vercelUrl}/oauth/client-metadata.json`
+        : `http://localhost?${new URLSearchParams({ scope: this.scope, redirect_uri: this.redirect_uris[0] })}`;
+    },
     grant_types: ["authorization_code", "refresh_token"],
     scope: "atproto transition:generic",
     response_types: ["code"],
-    redirect_uris: [url("/oauth/callback")],
+    redirect_uris: [`${config.url}/oauth/callback`],
     dpop_bound_access_tokens: true,
     token_endpoint_auth_method: "none",
   },

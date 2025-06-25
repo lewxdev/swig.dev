@@ -2,6 +2,7 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Geist_Mono } from "next/font/google";
+import { getSession } from "@/app/oauth/_actions";
 
 export const metadata: Metadata = {
   title: "swig.dev",
@@ -11,7 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function RootLayout({ children }: React.PropsWithChildren) {
+export default async function RootLayout(props: React.PropsWithChildren) {
+  const session = await getSession();
+  const action = session.did ? "logout" : "login";
+
   return (
     <html lang="en" className={geistMono.className}>
       <body className="min-h-screen">
@@ -24,13 +28,13 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
               <Link href="/create" className="hover:text-orange-600">
                 create
               </Link>
-              <Link href="/oauth" className="hover:text-orange-600">
-                login
+              <Link href={`/oauth/${action}`} className="hover:text-orange-600">
+                {action}
               </Link>
             </div>
           </div>
         </nav>
-        <main className="mx-auto max-w-4xl p-4">{children}</main>
+        <main className="mx-auto max-w-4xl p-4">{props.children}</main>
       </body>
     </html>
   );

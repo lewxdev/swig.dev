@@ -2,7 +2,7 @@
 import { auth } from "@/app/oauth/_actions";
 import { useActionState } from "react";
 
-export default function Login() {
+export default function LoginPage() {
   const [message, action, pending] = useActionState(auth, undefined);
 
   return (

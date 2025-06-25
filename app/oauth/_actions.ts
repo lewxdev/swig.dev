@@ -5,7 +5,7 @@ import { client } from "@/app/oauth/_client";
 import { getIronSession } from "iron-session";
 import { cookies } from "next/headers";
 
-export async function auth(message: string | undefined, payload: FormData) {
+export async function login(message: string | undefined, payload: FormData) {
   const handle = payload.get("handle");
   if (typeof handle !== "string" || !isValidHandle(handle)) {
     return "invalid handle";
@@ -19,9 +19,15 @@ export async function auth(message: string | undefined, payload: FormData) {
   );
 }
 
+export async function logout() {
+  const ironSession = await getSession();
+  ironSession.destroy();
+  redirect("/");
+}
+
 export async function getSession() {
   const cookieStore = await cookies();
-  return getIronSession<{ did: string }>(cookieStore, {
+  return getIronSession<{ did?: string }>(cookieStore, {
     password: process.env.COOKIE_PASSWORD!,
     cookieName: "sid",
   });

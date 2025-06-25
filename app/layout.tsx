@@ -2,7 +2,7 @@ import "@/app/globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Geist_Mono } from "next/font/google";
-import { getSession } from "@/app/oauth/_actions";
+import { getSession, logout } from "@/app/oauth/_actions";
 
 export const metadata: Metadata = {
   title: "swig.dev",
@@ -14,7 +14,6 @@ const geistMono = Geist_Mono({
 
 export default async function RootLayout(props: React.PropsWithChildren) {
   const session = await getSession();
-  const action = session.did ? "logout" : "login";
 
   return (
     <html lang="en" className={geistMono.className}>
@@ -28,9 +27,18 @@ export default async function RootLayout(props: React.PropsWithChildren) {
               <Link href="/create" className="hover:text-orange-600">
                 create
               </Link>
-              <Link href={`/oauth/${action}`} className="hover:text-orange-600">
-                {action}
-              </Link>
+              {session.did ? (
+                <a
+                  onClick={logout}
+                  className="cursor-pointer hover:text-orange-600"
+                >
+                  logout
+                </a>
+              ) : (
+                <Link href="/oauth/login" className="hover:text-orange-600">
+                  login
+                </Link>
+              )}
             </div>
           </div>
         </nav>

@@ -1,9 +1,9 @@
 "use client";
-import { login } from "@/app/_actions/login";
+import { action } from "@/app/oauth/_action";
 import { useActionState } from "react";
 
 export default function Login() {
-  const [message, formAction, pending] = useActionState(login, "");
+  const [message, formAction, pending] = useActionState(action, "");
 
   return (
     <div className="max-w-md space-y-8">

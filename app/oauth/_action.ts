@@ -1,9 +1,9 @@
 "use server";
 import { isValidHandle } from "@atproto/syntax";
 import { redirect } from "next/navigation";
-import { client } from "@/lib/oauth";
+import { client } from "@/app/oauth/_client";
 
-export async function login(_message: string, payload: FormData) {
+export async function action(_message: string, payload: FormData) {
   const handle = payload.get("handle");
   if (typeof handle !== "string" || !isValidHandle(handle)) {
     return "invalid handle";

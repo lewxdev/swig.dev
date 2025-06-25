@@ -1,4 +1,4 @@
-import { client } from "@/lib/oauth";
+import { client } from "@/app/oauth/_client";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 

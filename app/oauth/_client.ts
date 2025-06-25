@@ -40,7 +40,7 @@ export const client = new NodeOAuthClient({
     grant_types: ["authorization_code", "refresh_token"],
     scope: "atproto transition:generic",
     response_types: ["code"],
-    redirect_uris: [url("/oauth/callback")],
+    redirect_uris: [url("/oauth/session")],
     dpop_bound_access_tokens: true,
     token_endpoint_auth_method: "none",
   },

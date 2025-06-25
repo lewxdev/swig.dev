@@ -7,7 +7,7 @@ export default function Login() {
 
   return (
     <div className="max-w-md space-y-8">
-      <form action={formAction} className="space-y-4">
+      <form action={formAction} method="post" className="space-y-4">
         <input
           type="text"
           name="handle"

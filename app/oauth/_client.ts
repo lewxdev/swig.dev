@@ -21,7 +21,10 @@ const makeStore = <K extends Key, V extends Value>(
     return result.at(0)?.value;
   },
   async set(key, value) {
-    await db.insert(table).values({ key, value });
+    await db.insert(table).values({ key, value }).onConflictDoUpdate({
+      target: table.key,
+      set: { value },
+    });
   },
   async del(key) {
     await db.delete(table).where(eq(table.key, key));

@@ -34,7 +34,7 @@ function makeStore<K extends Key, V extends Value>(
 }
 
 export const client = new NodeOAuthClient({
-  // see: https://docs.bsky.app/docs/advanced-guides/oauth-client#client-and-server-metadata
+  // see: https://atproto.com/specs/oauth#client-id-metadata-document
   clientMetadata: {
     client_name: "swig.dev",
     client_uri: config.url,

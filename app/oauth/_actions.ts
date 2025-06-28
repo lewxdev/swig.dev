@@ -15,7 +15,7 @@ export async function login(message: string | undefined, payload: FormData) {
   // see: https://nextjs.org/docs/app/api-reference/functions/redirect
   return client.authorize(handle).then(
     (url) => redirect(url.href),
-    (error) => (error instanceof Error ? error.message : error?.toString()),
+    () => "there was a problem logging in",
   );
 }
 

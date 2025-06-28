@@ -1,6 +1,4 @@
 {
-  "cSpell.words": ["atproto", "turbopack", "vercel"],
-
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },

@@ -11,11 +11,11 @@ const comments = [
   },
 ];
 
-export default async function EventPage({
-  params,
-}: {
+type EventPageProps = {
   params: Promise<{ id: string }>;
-}) {
+};
+
+export default async function EventPage({ params }: EventPageProps) {
   const { id } = await params;
 
   return (
@@ -52,12 +52,8 @@ export default async function EventPage({
       </div>
       <div>
         <h2 className="pb-2">location</h2>
-        <p className="text-gray-700">
-          local cafe
-          <br />
-          123 main st
-          <br />
-          anytown, usa
+        <p className="whitespace-pre-line text-gray-700">
+          local cafe{"\n"}123 main st{"\n"}anytown, usa
         </p>
       </div>
       <div>

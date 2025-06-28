@@ -20,22 +20,22 @@ export default async function RootLayout(props: React.PropsWithChildren) {
       <body className="min-h-screen">
         <nav className="border-b border-gray-200">
           <div className="mx-auto flex max-w-4xl items-center justify-between p-4">
-            <Link href="/" className="text-orange-600">
+            <Link href="/" className="text-amber-600">
               swig.dev
             </Link>
             <div className="space-x-4">
-              <Link href="/create" className="hover:text-orange-600">
+              <Link href="/create" className="hover:text-amber-600">
                 create
               </Link>
               {session.did ? (
                 <a
                   onClick={logout}
-                  className="cursor-pointer hover:text-orange-600"
+                  className="cursor-pointer hover:text-amber-600"
                 >
                   logout
                 </a>
               ) : (
-                <Link href="/oauth/login" className="hover:text-orange-600">
+                <Link href="/oauth/login" className="hover:text-amber-600">
                   login
                 </Link>
               )}

@@ -30,7 +30,7 @@ export default function LoginPage() {
           bluesky.
         </p>
         <p>
-          <a href="https://bsky.app" className="text-caramel hover:underline">
+          <a href="https://bsky.app" className="text-amber-600 hover:underline">
             create a bluesky account
           </a>
         </p>
